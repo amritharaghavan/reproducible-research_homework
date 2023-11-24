@@ -1,6 +1,13 @@
 # Reproducible research: version control and R
 
 \# INSERT ANSWERS HERE #
+Q1-3:
+
+4) When running the script, I observed that the graph displaying the walk showed a different path every time. This path is seemingly completely random- and it does not seem possible to replicate any one graph that was made, as there is no specific random seed, or a starting number used so that a 'random' motion can be replicated. This means that any work based on this Brownian motion simulator will not be able to be reoeated, either by the author of the code or by anyone else, making this bad for scientific method. (???)
+
+A random seed is a value used to start a pseudorandom number generator. This value is helpful in scientific coding in order to make work replicable, while still starting a random pathway. Using a random seed in a generator in this way ensures that, if this seed is used to start the generator, the same values will be achieved each time. This is essential for proper scientific method and reproducibility, as there is no guarantee that results will work if they cannot  be reproduced by anyone else.
+
+
 
 ## Instructions
 
