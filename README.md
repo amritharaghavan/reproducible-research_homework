@@ -7,8 +7,20 @@ Q1-3:
 
 A random seed is a value used to start a pseudorandom number generator. This value is helpful in scientific coding in order to make work replicable, while still starting a random pathway. Using a random seed in a generator in this way ensures that, if this seed is used to start the generator, the same values will be achieved each time. This is essential for proper scientific method and reproducibility, as there is no guarantee that results will work if they cannot  be reproduced by anyone else.
 
+How to show edits???
 
+5) The table has 13 rows and 33 columns
+   You can use a log transformation on both axes to fit a linear model to the data.
+   ??
+   Graph in coding project
+   When genome length= 300kb, virion volume= 6698076nm3
 
+Bonus:
+Reproducibility is the ability for an experiment to give consistent results when the same data is analysed, while replicability is the ability for multiple researchers to produce the same results based on the same method. Essentially, in replicability, the entire experiment is repeated from beginning to end, the ensure that the results themselves are reliable, while in reproducibility, existing data is reanalysed, to determine whether the analysis of results was performed fairly and coorrectly. A study can be reproducible, but not replicable- if the analysis is done correctly, but the results themselves come out differently when replicated in a different setting, the data is reproducible but not replicable. 
+
+Git and Github can be used to improve replicability and reproducibility in many ways. Primarily, git tracks any changes to code over time, so previous versions of work can be accessed at any point. This allows results and analysis to be reproduced. Github allows for this to be accessed by other researchers, so they can understand the experiments performed better, and therefore replicate results better. Git allows different collaborators to work on different branches of the same project, and merge changes later- so all responses and contributions are well-documented, and it is clear who performed what parts of each analysis. Git also creates a place where detailed documentation of every change and piece of analysis can be described, and instructions and annotations of how all analysis has been performed can be laid out, so other researchers can reproduce your analysis, or replicate it based on their own data. Branches are also very helpful in reproducibility- new copies of your work can be made, so any approaches which did not necessarily end up being the key methods of analysis can still be documented and reproduced. Github also has systems to ensure code runs successfully after each commit, to prevent issues that are never caught. 
+
+However, for beginners, git and github are not necessarily the most accessible, making it difficult for science to be practiced and reproducibility to be uphheld by those who are less used to using code. Also, there are limitations on what is free to use on github, so those with a lower budget may not be able to open pribvate repositories, and any larger teams will have to pay if they require more collaborators than is allowed on the free github tier. GitHub also relies on network connectivity, and a central service- if either of these are lost, then the ability to work on your experiment is also lost. 
 ## Instructions
 
 The homework for this Computer skills practical is divided into 5 questions for a total of 100 points (plus an optional bonus question worth 10 extra points). First, fork this repo and make sure your fork is made **Public** for marking. Answers should be added to the # INSERT ANSWERS HERE # section above in the **README.md** file of your forked repository.
