@@ -12,10 +12,14 @@ A random seed is a value used to start a pseudorandom number generator. This val
 
 
 5) The table has 13 rows and 33 columns
-   You can use a log transformation on both axes to fit a linear model to the data.
-   ??
-   Graph in coding project
-   When genome length= 300kb, virion volume= 6698076nm3
+
+You can use a log transformation on both axes to fit a linear model to the data. This transformation can be found in question5_code.R
+
+**ASK ABOUT THIS**
+![image](https://github.com/amritharaghavan/reproducible-research_homework/assets/150163772/3216a1c9-b719-4213-8092-2671acc0fd05)
+The code for this image is found in question5_code.R
+
+ When genome length= 300kb, virion volume= 6698076nm3- the working for this is in the question5_code.R file
 
 Bonus:
 Reproducibility is the ability for an experiment to give consistent results when the same data is analysed, while replicability is the ability for multiple researchers to produce the same results based on the same method. Essentially, in replicability, the entire experiment is repeated from beginning to end, the ensure that the results themselves are reliable, while in reproducibility, existing data is reanalysed, to determine whether the analysis of results was performed fairly and coorrectly. A study can be reproducible, but not replicable- if the analysis is done correctly, but the results themselves come out differently when replicated in a different setting, the data is reproducible but not replicable. 
