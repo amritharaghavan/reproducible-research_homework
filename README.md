@@ -2,9 +2,8 @@
 
 \# INSERT ANSWERS HERE #
 Q1-3:
-https://github.com/amritharaghavan/logistic_growth
 
-4) When running the script, I observed that the graph displaying the walk showed a different path every time. This path is seemingly completely random- and it does not seem possible to replicate any one graph that was made, as there is no specific random seed, or a starting number used so that a 'random' motion can be replicated. This means that any work based on this Brownian motion simulator will not be able to be reoeated, either by the author of the code or by anyone else, making this bad for scientific method. (???)
+4) The code produces two random walks, side by side, each consisting of 500 steps. Each time you run the code, two different walks are produced. The colour gradient shows the time progression in each walk. I observed that, each time the code is run, two different walks are produced, with different start and end points entirely. Although these can never be entirely random, as they are computer-generated, and coded for, the pseudorandom generation each time means that these graphs are almost impossible to reproduce. Using code like this could be seen as bad scientific practice- if your work is not reproducible, peer reviewing to ensure accurate and reliable results is impossible, so it is difficult to be certain that results are correct.
 
 A random seed is a value used to start a pseudorandom number generator. This value is helpful in scientific coding in order to make work replicable, while still starting a random pathway. Using a random seed in a generator in this way ensures that, if this seed is used to start the generator, the same values will be achieved each time. This is essential for proper scientific method and reproducibility, as there is no guarantee that results will work if they cannot  be reproduced by anyone else.
 
@@ -12,10 +11,20 @@ A random seed is a value used to start a pseudorandom number generator. This val
 
 
 5) The table has 13 rows and 33 columns
-   You can use a log transformation on both axes to fit a linear model to the data.
-   ??
-   Graph in coding project
-   When genome length= 300kb, virion volume= 6698076nm3
+
+You can use a log transformation on both axes to fit a linear model to the data. This transformation can be found in question5_code.R
+
+alpha= 1.5152
+p=2.28e-10, so significant
+beta= exp(7.0748)
+    =1181.807
+p= 6.44e-10, so significant
+
+
+![image](https://github.com/amritharaghavan/reproducible-research_homework/assets/150163772/3216a1c9-b719-4213-8092-2671acc0fd05)
+The code for this image is found in question5_code.R
+
+ When genome length= 300kb, virion volume= 6698076nm3- the working for this is in the question5_code.R file
 
 Bonus:
 Reproducibility is the ability for an experiment to give consistent results when the same data is analysed, while replicability is the ability for multiple researchers to produce the same results based on the same method. Essentially, in replicability, the entire experiment is repeated from beginning to end, the ensure that the results themselves are reliable, while in reproducibility, existing data is reanalysed, to determine whether the analysis of results was performed fairly and coorrectly. A study can be reproducible, but not replicable- if the analysis is done correctly, but the results themselves come out differently when replicated in a different setting, the data is reproducible but not replicable. 
