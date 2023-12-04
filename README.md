@@ -1,7 +1,7 @@
 # Reproducible research: version control and R
 
 \# INSERT ANSWERS HERE #
-Q1-3:
+Q1-3:https://github.com/oxstudent1/logistic_growth
 
 4) The code produces two random walks, side by side, each consisting of 500 steps. Each time you run the code, two different walks are produced. The colour gradient shows the time progression in each walk. I observed that, each time the code is run, two different walks are produced, with different start and end points entirely. Although these can never be entirely random, as they are computer-generated, and coded for, the pseudorandom generation each time means that these graphs are almost impossible to reproduce. Using code like this could be seen as bad scientific practice- if your work is not reproducible, peer reviewing to ensure accurate and reliable results is impossible, so it is difficult to be certain that results are correct.
 
