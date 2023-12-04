@@ -2,9 +2,8 @@
 
 \# INSERT ANSWERS HERE #
 Q1-3:
-https://github.com/amritharaghavan/logistic_growth
 
-4) When running the script, I observed that the graph displaying the walk showed a different path every time. This path is seemingly completely random- and it does not seem possible to replicate any one graph that was made, as there is no specific random seed, or a starting number used so that a 'random' motion can be replicated. This means that any work based on this Brownian motion simulator will not be able to be reoeated, either by the author of the code or by anyone else, making this bad for scientific method. (???)
+4) The code produces two random walks, side by side, each consisting of 500 steps. Each time you run the code, two different walks are produced. The colour gradient shows the time progression in each walk. I observed that, each time the code is run, two different walks are produced, with different start and end points entirely. Although these can never be entirely random, as they are computer-generated, and coded for, the pseudorandom generation each time means that these graphs are almost impossible to reproduce. Using code like this could be seen as bad scientific practice- if your work is not reproducible, peer reviewing to ensure accurate and reliable results is impossible, so it is difficult to be certain that results are correct.
 
 A random seed is a value used to start a pseudorandom number generator. This value is helpful in scientific coding in order to make work replicable, while still starting a random pathway. Using a random seed in a generator in this way ensures that, if this seed is used to start the generator, the same values will be achieved each time. This is essential for proper scientific method and reproducibility, as there is no guarantee that results will work if they cannot  be reproduced by anyone else.
 
@@ -20,6 +19,8 @@ p=2.28e-10, so significant
 beta= exp(7.0748)
     =1181.807
 p= 6.44e-10, so significant
+
+
 ![image](https://github.com/amritharaghavan/reproducible-research_homework/assets/150163772/3216a1c9-b719-4213-8092-2671acc0fd05)
 The code for this image is found in question5_code.R
 
