@@ -15,7 +15,11 @@ A random seed is a value used to start a pseudorandom number generator. This val
 
 You can use a log transformation on both axes to fit a linear model to the data. This transformation can be found in question5_code.R
 
-**ASK ABOUT THIS**
+alpha= 1.5152
+p=2.28e-10, so significant
+beta= exp(7.0748)
+    =1181.807
+p= 6.44e-10, so significant
 ![image](https://github.com/amritharaghavan/reproducible-research_homework/assets/150163772/3216a1c9-b719-4213-8092-2671acc0fd05)
 The code for this image is found in question5_code.R
 
