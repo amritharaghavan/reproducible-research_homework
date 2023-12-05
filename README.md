@@ -12,7 +12,19 @@ A random seed is a value used to start a pseudorandom number generator. This val
 
 5) The table has 13 rows and 33 columns
 
-You can use a log transformation on both axes to fit a linear model to the data. This transformation can be found in question5_code.R
+You can use a log transformation on both axes to fit a linear model to the data. This transformation can be found in question5_code.R, as well as below:
+```
+
+ Applying a log transformation to fit a linear model to  the data
+(Virus_data$log_transformed_volume <- log(Virus_data$"Virion volume (nm×nm×nm)"))+
+(Virus_data$log_transformed_genomelength<- log(Virus_data$`Genome length (kb)`))
+
+#This creates two new columns in the data- log transformed virion volume, and log transformed genome length
+
+#Creating a linear model with the log-transformed data- logV= log(beta)+ alpha.log(L)
+#We can estimate beta by taking the exponent of the intercept of the model, and we can estimate alpha by taking the slope of the model
+linear_model <- lm(log_transformed_volume ~ log_transformed_genomelength, data = Virus_data)
+```
 
 alpha= 1.5152
 p=2.28e-10, so significant
