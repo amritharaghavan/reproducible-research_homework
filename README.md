@@ -1,7 +1,9 @@
 # Reproducible research: version control and R
 
 \# INSERT ANSWERS HERE #
+
 Q1-3:https://github.com/oxstudent1/logistic_growth
+
 4) (**30 points**) Sometimes we are interested in modelling a process that involves randomness. A good example is Brownian motion. We will explore how to simulate a random process in a way that it is reproducible:
 
    - A script for simulating a random_walk is provided in the `question-4-code` folder of this repo. Execute the code to produce the paths of two random walks. What do you observe? (10 points)
@@ -51,7 +53,15 @@ p= 6.44e-10, so significant
   - Write the code to reproduce the figure shown below. (10 points)
 
 The code for this image is found in question5_code.R, as well as below:
-
+```
+#This creates the graph shown in the readme document, and saves it as a .png file
+graph<-ggplot(Virus_data, aes(x=log_transformed_genomelength, y=log_transformed_volume))+
+  geom_point()+
+  geom_smooth(method=lm,linewidth=0.5)+
+  labs(y="log [Virion volume (nm3)]", x="log [Genome length (kb)]")+
+  theme_bw()
+graph
+```
  What is the estimated volume of a 300 kb dsDNA virus? (4 points)
 
  When genome length= 300kb, virion volume= 6698076nm3- the working for this is in the question5_code.R file
@@ -64,6 +74,11 @@ Reproducibility is the ability for an experiment to give consistent results when
 Git and Github can be used to improve replicability and reproducibility in many ways. Primarily, git tracks any changes to code over time, so previous versions of work can be accessed at any point. This allows results and analysis to be reproduced. Github allows for this to be accessed by other researchers, so they can understand the experiments performed better, and therefore replicate results better. Git allows different collaborators to work on different branches of the same project, and merge changes later- so all responses and contributions are well-documented, and it is clear who performed what parts of each analysis. Git also creates a place where detailed documentation of every change and piece of analysis can be described, and instructions and annotations of how all analysis has been performed can be laid out, so other researchers can reproduce your analysis, or replicate it based on their own data. Branches are also very helpful in reproducibility- new copies of your work can be made, so any approaches which did not necessarily end up being the key methods of analysis can still be documented and reproduced. Github also has systems to ensure code runs successfully after each commit, to prevent issues that are never caught. 
 
 However, for beginners, git and github are not necessarily the most accessible, making it difficult for science to be practiced and reproducibility to be uphheld by those who are less used to using code. Also, there are limitations on what is free to use on github, so those with a lower budget may not be able to open pribvate repositories, and any larger teams will have to pay if they require more collaborators than is allowed on the free github tier. GitHub also relies on network connectivity, and a central service- if either of these are lost, then the ability to work on your experiment is also lost. 
+
+References:
+-https://www.scribbr.co.uk/research-methods/reproducibility-vs-replicability/#:~:text=What's%20the%20difference%20between%20reproducibility,the%20collection%20of%20new%20data.
+-https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
+-https://swcarpentry.github.io/git-novice/
 ## Instructions
 
 The homework for this Computer skills practical is divided into 5 questions for a total of 100 points (plus an optional bonus question worth 10 extra points). First, fork this repo and make sure your fork is made **Public** for marking. Answers should be added to the # INSERT ANSWERS HERE # section above in the **README.md** file of your forked repository.
