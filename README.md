@@ -2,19 +2,34 @@
 
 \# INSERT ANSWERS HERE #
 Q1-3:https://github.com/oxstudent1/logistic_growth
+4) (**30 points**) Sometimes we are interested in modelling a process that involves randomness. A good example is Brownian motion. We will explore how to simulate a random process in a way that it is reproducible:
 
-4) The code produces two random walks, side by side, each consisting of 500 steps. Each time you run the code, two different walks are produced. The colour gradient shows the time progression in each walk. I observed that, each time the code is run, two different walks are produced, with different start and end points entirely. Although these can never be entirely random, as they are computer-generated, and coded for, the pseudorandom generation each time means that these graphs are almost impossible to reproduce. Using code like this could be seen as bad scientific practice- if your work is not reproducible, peer reviewing to ensure accurate and reliable results is impossible, so it is difficult to be certain that results are correct.
+   - A script for simulating a random_walk is provided in the `question-4-code` folder of this repo. Execute the code to produce the paths of two random walks. What do you observe? (10 points)
+   
+The code produces two random walks, side by side, each consisting of 500 steps. Each time you run the code, two different walks are produced. The colour gradient shows the time progression in each walk. I observed that, each time the code is run, two different walks are produced, with different start and end points entirely. Although these can never be entirely random, as they are computer-generated, and coded for, the pseudorandom generation each time means that these graphs are almost impossible to reproduce. Using code like this could be seen as bad scientific practice- if your work is not reproducible, peer reviewing to ensure accurate and reliable results is impossible, so it is difficult to be certain that results are correct.
+
+  - Investigate the term **random seeds**. What is a random seed and how does it work? (5 points)
 
 A random seed is a value used to start a pseudorandom number generator. This value is helpful in scientific coding in order to make work replicable, while still starting a random pathway. Using a random seed in a generator in this way ensures that, if this seed is used to start the generator, the same values will be achieved each time. This is essential for proper scientific method and reproducibility, as there is no guarantee that results will work if they cannot  be reproduced by anyone else.
 
+ - Edit the script to make a reproducible simulation of Brownian motion. Commit the file and push it to your forked `reproducible-research_homework` repo. (10 points)
+   - Go to your commit history and click on the latest commit. Show the edit you made to the code in the comparison view (add this image to the **README.md** of the fork). (5 points)
+
+The edited script can be found in the 'question-4-code' folder in this repository, and proof of the change is blow:
+
 <img width="907" alt="image" src="https://github.com/amritharaghavan/reproducible-research_homework/assets/150163772/eeef1ccf-7a21-485b-b4cc-c6e93040c4ad">
 
+5) (**30 points**) In 2014, Cui, Schlub and Holmes published an article in the *Journal of Virology* (doi: https://doi.org/10.1128/jvi.00362-14) showing that the size of viral particles, more specifically their volume, could be predicted from their genome size (length). They found that this relationship can be modelled using an allometric equation of the form **$`V = \beta L^{\alpha}`$**, where $`V`$ is the virion volume in nm<sup>3</sup> and $`L`$ is the genome length in nucleotides.
 
-5) The table has 13 rows and 33 columns
+   - Import the data for double-stranded DNA (dsDNA) viruses taken from the Supplementary Materials of the original paper into Posit Cloud (the csv file is in the `question-5-data` folder). How many rows and columns does the table have? (3 points)
+
+The table has 13 rows and 33 columns
+
+  - What transformation can you use to fit a linear model to the data? Apply the transformation. (3 points)
 
 You can use a log transformation on both axes to fit a linear model to the data. This transformation can be found in question5_code.R, as well as below:
 ```
-
+Virus_data<- Cui_etal2014
  Applying a log transformation to fit a linear model to  the data
 (Virus_data$log_transformed_volume <- log(Virus_data$"Virion volume (nm×nm×nm)"))+
 (Virus_data$log_transformed_genomelength<- log(Virus_data$`Genome length (kb)`))
@@ -25,6 +40,7 @@ You can use a log transformation on both axes to fit a linear model to the data.
 #We can estimate beta by taking the exponent of the intercept of the model, and we can estimate alpha by taking the slope of the model
 linear_model <- lm(log_transformed_volume ~ log_transformed_genomelength, data = Virus_data)
 ```
+ - Find the exponent ($\alpha$) and scaling factor ($\beta$) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in **Table 2** of the paper, did you find the same values? (10 points)
 
 alpha= 1.5152
 p=2.28e-10, so significant
@@ -32,13 +48,17 @@ beta= exp(7.0748)
     =1181.807
 p= 6.44e-10, so significant
 
+  - Write the code to reproduce the figure shown below. (10 points)
 
-![image](https://github.com/amritharaghavan/reproducible-research_homework/assets/150163772/3216a1c9-b719-4213-8092-2671acc0fd05)
-The code for this image is found in question5_code.R
+The code for this image is found in question5_code.R, as well as below:
+
+ What is the estimated volume of a 300 kb dsDNA virus? (4 points)
 
  When genome length= 300kb, virion volume= 6698076nm3- the working for this is in the question5_code.R file
 
-Bonus:
+**Bonus** (**10 points**) Explain the difference between reproducibility and replicability in scientific research. How can git and GitHub be used to enhance the reproducibility and replicability of your work? what limitations do they have? (e.g. check the platform [protocols.io](https://www.protocols.io/)).
+
+
 Reproducibility is the ability for an experiment to give consistent results when the same data is analysed, while replicability is the ability for multiple researchers to produce the same results based on the same method. Essentially, in replicability, the entire experiment is repeated from beginning to end, the ensure that the results themselves are reliable, while in reproducibility, existing data is reanalysed, to determine whether the analysis of results was performed fairly and coorrectly. A study can be reproducible, but not replicable- if the analysis is done correctly, but the results themselves come out differently when replicated in a different setting, the data is reproducible but not replicable. 
 
 Git and Github can be used to improve replicability and reproducibility in many ways. Primarily, git tracks any changes to code over time, so previous versions of work can be accessed at any point. This allows results and analysis to be reproduced. Github allows for this to be accessed by other researchers, so they can understand the experiments performed better, and therefore replicate results better. Git allows different collaborators to work on different branches of the same project, and merge changes later- so all responses and contributions are well-documented, and it is clear who performed what parts of each analysis. Git also creates a place where detailed documentation of every change and piece of analysis can be described, and instructions and annotations of how all analysis has been performed can be laid out, so other researchers can reproduce your analysis, or replicate it based on their own data. Branches are also very helpful in reproducibility- new copies of your work can be made, so any approaches which did not necessarily end up being the key methods of analysis can still be documented and reproduced. Github also has systems to ensure code runs successfully after each commit, to prevent issues that are never caught. 
