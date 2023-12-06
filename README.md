@@ -45,16 +45,20 @@ linear_model <- lm(log_transformed_volume ~ log_transformed_genomelength, data =
  - Find the exponent ($\alpha$) and scaling factor ($\beta$) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in **Table 2** of the paper, did you find the same values? (10 points)
 
 alpha= 1.5152
+
 p=2.28e-10, so significant
+
 beta= exp(7.0748)
     =1181.807
+    
 p= 6.44e-10, so significant
+
+The results in the paper were 1.52 for the exponent, and 1182 for the scaling factor- these values are the same as mine, to 3 and 4 significant figures respectively.
 
   - Write the code to reproduce the figure shown below. (10 points)
 
 The code for this image is found in question5_code.R, as well as below:
 ```
-#This creates the graph shown in the readme document, and saves it as a .png file
 graph<-ggplot(Virus_data, aes(x=log_transformed_genomelength, y=log_transformed_volume))+
   geom_point()+
   geom_smooth(method=lm,linewidth=0.5)+
@@ -76,9 +80,9 @@ Git and Github can be used to improve replicability and reproducibility in many 
 However, for beginners, git and github are not necessarily the most accessible, making it difficult for science to be practiced and reproducibility to be uphheld by those who are less used to using code. Also, there are limitations on what is free to use on github, so those with a lower budget may not be able to open pribvate repositories, and any larger teams will have to pay if they require more collaborators than is allowed on the free github tier. GitHub also relies on network connectivity, and a central service- if either of these are lost, then the ability to work on your experiment is also lost. 
 
 References:
--https://www.scribbr.co.uk/research-methods/reproducibility-vs-replicability/#:~:text=What's%20the%20difference%20between%20reproducibility,the%20collection%20of%20new%20data.
--https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
--https://swcarpentry.github.io/git-novice/
+   - https://www.scribbr.co.uk/research-methods/reproducibility-vs-replicability/#:~:text=What's%20the%20difference%20between%20reproducibility,the%20collection%20of%20new%20data.
+   - https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
+   - https://swcarpentry.github.io/git-novice/
 ## Instructions
 
 The homework for this Computer skills practical is divided into 5 questions for a total of 100 points (plus an optional bonus question worth 10 extra points). First, fork this repo and make sure your fork is made **Public** for marking. Answers should be added to the # INSERT ANSWERS HERE # section above in the **README.md** file of your forked repository.
